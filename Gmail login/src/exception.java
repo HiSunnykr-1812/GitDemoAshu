@@ -16,11 +16,13 @@ public class exception {
 		WebDriver driver=new ChromeDriver(ChromeOption);
 		//NotFoundException
 		try {
-		driver.get("https://the-internet.herokuapp.com/tinymce");
-        driver.switchTo().frame("mce_0_ifr");
-        driver.findElement(By.id("tinymce")).sendKeys("ggggg");
+		driver.get("https://the-internet.herokuapp.com/tinymce");//launch of browser
+        driver.switchTo().frame("mce_0_ifr");//frame
+        driver.findElement(By.id("tinymce")).sendKeys("ggggg");//sendkeys
+        driver.findElement(By.id("tinymce")).clear();
 	    }
 		catch(NotFoundException e){
+			System.out.println("NOT FOUND");
 			System.out.println("NOT FOUND");
 			e.printStackTrace();
 			
